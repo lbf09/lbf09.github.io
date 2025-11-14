@@ -392,6 +392,7 @@
   font-weight: bold;
   margin-bottom: 10px;
   text-shadow: 2px 2px 3px indianred;
+    text-align: center;
 }
 
 .h2 {
@@ -456,10 +457,6 @@ letter-spacing: 1.4px;
 
   .titulo {
     font-size: 2.2rem;
-    text-align: center;
-  }
-
-  .info{
     text-align: center;
   }
 
@@ -608,4 +605,5 @@ letter-spacing: 1.4px;
   z-index: -1;
   opacity: 0.1;
 }
+
 
