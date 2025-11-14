@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cotilplex Cinemas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="imagens/icone.png">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="centro">
+    <img src="../imagens/logo2.png" class="logo mx-auto d-block">
+    <hr>
+
+    <ul class="nav navbar justify-content-center">
+      <li class="nav-item"><a class="nav-link active" href="../index.html">
+        <h3>FILMES EM CARTAZ</h3>
+      </a></li>
+      <li class="nav-item"><a class="nav-link" href="maiores.html">
+        <h3>MAIORES BILHETERIAS</h3>
+      </a></li>
+      <li class="nav-item"><a class="nav-link" href="sobre.html">
+        <h3>SOBRE</h3>
+      </a></li>
+      <li class="nav-item"><a class="nav-link" href="login.html">
+        <button class="botao">LOGIN</button>
+      </a></li>
+      <li class="nav-item"><a class="nav-link">
+        <button class="pagina2">CADASTRE-SE</button>
+      </a></li>
+    </ul>
+    <hr>
+
+    <br><br><br><br>
+
+    <form method="post">
+  <label for="nome">USUÁRIO:</label>
+      <input type="text"required minlength="3" maxlength="40" spellcheck="true" placeholder="Informe seu nome completo" size="40" name="nome" id="nome">
+      
+      <label for="email">EMAIL:</label>
+      <input type="email" spellcheck="true" placeholder="@gmail.com"   id="email">
+    <br>
+      <label for="telefone">TELEFONE:</label>
+      <input type="text" spellcheck="true"  name="idade" id="telefone">
+    <br>
+      <label for="sexo">GÊNERO:</label>
+      <input type="radio" id="f" name="escolha">
+      <span class="escolha">Feminino</span>
+      <input type="radio" id="m" name="escolha">
+      <span class="escolha">Masculino</span>
+      <input type="radio" id="o" name="escolha">
+      <span class="escolha">Prefiro não informar</span>
+      <br>
+      <label for="nasc">DATA DE NASCIMENTO:</label>
+      <input type="date" spellcheck="true" id="nasc" required>
+    <br>
+    <label for="senha">SENHA:</label>
+      <input type="password" spellcheck="true"  name="idade" id="senha">
+    <br>
+      <label for="senha">CONFIRMAR SENHA:</label>
+      <input type="password" spellcheck="true"  name="idade" id="senha">
+    <br>
+      <button type="button" class="enviar">FAZER CADASTRO</button>
+      <br>
+      <center>
+        <a href="login.html">
+      <img src="../imagens/logar.png" class="google">
+      </a>
+      </center>
+</form>
+<br><br><br><br>
+  </div>
+</body>
+</html>
