@@ -1,0 +1,611 @@
+
+    body {
+      background: linear-gradient(153deg, rgba(45,45,46,1) 0%, rgba(0,0,0,1) 100%);
+      background-attachment: fixed;
+    }
+    .seta{
+      width: 2.5%;
+      height: 30%;
+      margin: auto;
+      background-color: gray;
+      border-radius: 15px 15px 15px 15px;
+    }
+    .pagina{
+      color: red;
+      text-shadow: 1px 1px 14px red;
+    }
+    .pagina2{
+      color: /*#3800C7*/ red;
+      text-shadow: 1px 1px 10px red;
+      border-radius: 10px;
+      padding: 5px 10px;
+      font-family: "Oswald", sans-serif;
+      transition: all 0.3s;
+      background-color: transparent;
+      border: 2px solid red;
+    }
+
+
+    .logo {
+      width: 400px;
+    }
+
+    .copy{
+      color: white;
+      font-family: "Oswald", sans-serif;
+    }
+
+    hr {
+            width: 100%;
+      position: relative;
+      height: 3px;
+     background: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.87) 16%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.82) 80%, rgba(255, 255, 255, 0) 100%)
+    }
+
+
+    h3 {
+      color: white;
+      font-family: "Oswald", sans-serif;
+      transition: color .3s ease;
+    }
+
+    h3:hover {
+      color: /*#3800C7*/ red;
+      text-shadow: 1px 1px 14px red;
+    }
+
+    .botao {
+      color: white;
+      background: transparent;
+      border: 2px solid white;
+      border-radius: 10px;
+      padding: 5px 10px;
+      font-family: "Oswald", sans-serif;
+      transition: all 0.3s;
+    }
+
+    .botao:hover {
+      border-color: /*#3800C7*/ red;
+      color: /*#3800C7*/ red;
+      text-shadow: 1px 1px 10px red;
+    }
+
+    .container{
+      width: 100%;
+    }
+
+    .navbar{
+      display: flex;
+      flex-wrap: wrap;
+      
+    }
+
+    .poster {
+      width: 200px;
+      height: 290px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 2px solid white;
+      transition: transform 0.3s ease;
+    }
+
+    .poster:hover {
+      transform: scale(1.05);
+      filter: brightness(0.7);
+    }
+
+   @media(min-width: 1401px){
+    .tamanho{
+      width: 50%;
+    }
+    .centro .des{
+      text-align: center;
+    }
+    .sobre{
+  padding-right: 200px;
+  padding-left: 200px;
+  color: white;
+  font-family: OCR A Std, monospace;
+  font-size: 30px;
+}
+   }
+
+    @media (max-width: 1400px) {
+      .poster { 
+        width: 120px; 
+        height: 200px; 
+      }
+      .legenda{
+        font-size: 16px;
+      }
+      h5{
+        font-size: 20px;
+      }
+    .tamanho{
+      width: 100%;
+    }
+    }
+
+    @media (max-width: 786px) {
+      .poster { 
+        width: 85px; 
+        height: 125px; 
+      }
+      .poster-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+            .navbar{
+        flex-direction: column;
+      }
+      .tamanho{
+      width: 100%;
+    }
+          .legenda{
+        font-size: 8px;
+      }
+      h5{
+        font-size: 12px;
+      }
+
+    }
+    
+
+    @media (max-width: 576px) {
+      .poster { 
+        width: 120px; 
+        height: 180px; 
+      }
+      .tamanho{
+        width: 100%;
+      }
+      .logo{
+        width: 200px;
+      }
+    }
+
+    .poster-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      justify-items: center;
+      padding: 15px;
+      margin: 0;
+    }
+
+    @media (max-width: 576px) {
+      .poster-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .carousel {
+      margin-bottom: 80px;
+      border: 8px double white;
+      border-left: 0;
+      border-right: 0;
+      box-shadow: 0 1px 10px white;
+    }
+
+    h1{
+      color: white;
+      font-family: "Oswald",sans-serif;
+      transition: color .3s ease;
+      padding: 2px;
+    }
+
+    .centro{
+      align-content: center;
+    }
+
+    /*maiores.html*/
+    .box2 {
+    position: relative;
+    width: 200px;
+    height: 305px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background-color: transparent;
+    padding: 12px;
+     flex-wrap: wrap;
+}
+
+.box2:hover {
+    transform: scale(1.08);
+    filter: brightness(0.7);
+}
+
+.imagens img{
+  z-index: 2;
+    transition: transform .2s;
+  position: relative;
+  width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 1px solid white;
+}
+.box3{
+  display: flex;
+    flex-direction:row;
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    background: transparent;
+}
+
+/*sobre.html*/
+.sobre{
+  padding-right: 20px;
+  padding-left: 20px;
+  color: white;
+  font-family: OCR A Std, monospace;
+  font-size: 20px;
+}
+
+.sobre a{
+  color: red;
+}
+
+/*termo.html*/
+.termo{
+  width: 90%;
+  height: 1000px;
+  align-content: center;
+    display: block;
+  margin: 0 auto;
+}
+
+/*login e cadastro*/
+  form{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 0 10px red;
+    margin: 0 auto;
+  }
+  label{
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: red;
+    font-family: "Oswald",sans-serif;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"]{
+    width: 100%;
+    padding: 8px;
+    margin-top: 2px;
+    border: 2px solid red;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    box-sizing: border-box;
+    color: red;
+    background: transparent;
+    font-family: OCR A Std, monospace;
+  }
+
+  input[type="radio"]{
+    accent-color: red;
+  }
+  .escolha{
+    color: red;
+    margin-right: 10px;
+    font-family: "Oswald",sans-serif;
+  }
+
+  input:hover{
+    border-color: red;
+  }
+
+  .enviar{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .enviar:hover{
+    background-color: darkred;
+  }
+
+  .detalhe{
+    color: red;
+    margin: auto;
+  }
+
+  .detalhe2{
+    color: darkred;
+  }
+
+  .google{
+    width: 50%;
+    transition: .2s;
+  }
+  .google:hover{
+    transform: scale(1.1);
+  }
+
+  /*impressão*/
+  @media print{
+    .navbar{
+      visibility: hidden;
+    }
+    .logo{
+      visibility: hidden;
+    }
+  }
+
+/*filmes*/
+
+.meio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  margin: auto;
+  padding: 10px;
+  gap: 20px;
+}
+
+.classificacao {
+  width: 50px;
+  padding-left: 5px;
+}
+
+
+.poster2 {
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid white;
+  box-shadow: 2px 2px 3px indianred;
+  background-color: red;
+  
+}
+
+.titulo {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 3px indianred;
+  text-align: center;
+}
+.info {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 3px indianred;
+}
+
+.h2 {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-size: 1.3rem;
+  margin: 15px 0 5px;
+  border-bottom: 2px solid #ccc;
+  display: inline-block;
+  text-shadow: 2px 2px 3px indianred;
+}
+
+.text-block {
+  width: 100%;
+}
+
+.text-block p,
+.text-block ul {
+ font-family: "Oxanium", sans-serif;
+letter-spacing: 1.4px;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.avaliacao {
+  margin-top: 40px;
+  padding: 5px;
+}
+
+.icone {
+  width: 100px;
+}
+
+.nota {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.rotten {
+  color: red;
+}
+
+.imdb {
+  color: gold;
+}
+
+@media (min-width: 1000px) {
+  .meio {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+
+  .poster2 {
+    height: 560px;
+    width: 420px;
+  }
+
+  .titulo {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .info{
+    text-align: center;
+  }
+
+  .h2 {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  .classificacao {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 999px) {
+  .meio {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+
+  .poster2 {
+    height: 450px;
+  }
+
+  .titulo {
+    width: 100%;
+    display: block;
+  }
+
+  .classificacao {
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .h2 {
+    text-align: left;
+  }
+}
+
+
+@media (max-width: 599px) {
+  .meio {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .poster2 {
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+  }
+
+  .text-block,
+  .avaliacao {
+    width: 100%;
+    margin: 0;
+    padding: 0 5px;
+    text-align: left;
+  }
+
+  .titulo {
+    width: 100%;
+    display: block;
+  }
+
+  .classificacao {
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .h2 {
+    text-align: left;
+  }
+
+  .icone {
+    width: 80px;
+  }
+
+  .nota {
+    font-size: 1.2rem;
+  }
+}
+
+.lista{
+  text-align: center;
+  color: white;
+}
+
+
+
+.topo{
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+
+.lista tbody tr{
+  border-bottom: 2px solid white;
+}
+.lista tbody tr:hover{
+  background-color: indianred;
+}
+
+.lista tbody td{
+  text-align: left;
+  padding: 6px;
+  padding-left: 25px;
+}
+
+.ancora{
+  text-align: center;
+}
+
+.ancora a{
+    color: white;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1.2px;
+  font-size: 30px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 2px;
+  border: 2px solid white;
+  transition: .2s;
+}
+
+.ancora a:hover{
+  transform: scale(1.2);
+    color: red;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 2px solid red;
+}
+
+#video2 {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  opacity: 0.1;
+}
+
