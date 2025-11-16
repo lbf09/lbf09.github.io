@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Infância Perdida – Coletânea de Poemas</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      background: #f5f3dc;
+      color: #4a3c31;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #fbe7a1;
+      color: #5a2c1f;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 3px dotted #e28413;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    .sumario{
+      background: #fffdf3;
+      border-left: 6px solid #fbe7a1;
+      border-right: 6px solid #fbe7a1;
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 900px;
+      padding: 2rem;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      width: 42%;
+      min-width: 280px;
+      line-height: 1.7;
+    }
+    /* --- Seção de introdução --- */
+    .introducao {
+      background: #fffdf3;
+      border-left: 6px solid #fbe7a1;
+      border-right: 6px solid #fbe7a1;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .introducao h2 {
+      text-align: center;
+      color: #703c24;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .introducao p {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      padding: 2rem;
+    }
+
+    section.poema-section {
+      background: #c7e2ed;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 1100px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border: 3px dotted #fbe7a1;
+    }
+
+    /* Faz poema + interpretação ocuparem largura cheia do section,
+       mantendo a aparência dos blocos (mas com poema em colunas). */
+    .poema-box {
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      width: 94%;
+      line-height: 1.7;
+      margin: 0 0px 1rem;
+    }
+
+    .interpretacao {
+      background: #e4f3f9;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      width: 94%;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .poema-box h2, .interpretacao h3 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.5rem;
+
+      text-align: left;
+    }
+
+    .poema-box h2 { color: #703c24; }
+    .interpretacao h3 { color: #004c6d; }
+    .sumario .poema{
+    	text-align: center;
+    	margin: auto;
+    }
+    /* --- *** mudança principal: versos em 3 colunas responsivas *** --- */
+    .poema-section .poema {
+      white-space: pre-line;
+      font-size: 1rem;
+      column-count: 3;
+      column-gap: 2rem;
+      text-align: justify;
+      -webkit-column-break-inside: avoid;
+      -moz-column-break-inside: avoid;
+      column-break-inside: avoid;
+    }
+
+    @media (max-width: 900px) {
+      .poema { column-count: 2; }
+    }
+
+    @media (max-width: 600px) {
+      .poema { column-count: 1; }
+    }
+
+    /* Imagens temáticas entre poemas */
+    .imagem-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 1.25rem 0 2rem;
+    }
+
+    .imagem-container img {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      object-fit: cover;
+    }
+
+    .sumario .poema a{
+      font-family: "Roboto Condensed", sans-serif;
+      letter-spacing: 2px;
+      color: #703c24;
+      text-decoration: none;
+      transition: .3s;
+      margin-right: 8px;
+    }
+    .sumario{
+      text-align: center;
+    }
+
+    .sumario .poema a:hover{
+      transform: scale(1.2);
+      letter-spacing: 4px;
+      text-decoration: underline;
+      filter: brightness(1.5);
+      background-color: rgba(122, 70, 24, 0.2);
+      border-radius: 5px;
+    }
+
+    footer {
+      background: #fbe7a1;
+      color: #4a3c31;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      border-top: 3px dotted #e28413;
+    }
+
+    @media (max-width: 900px) {
+      section.poema-section {
+        padding: 1.5rem;
+      }
+    }
+
+    #voltar-topo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4a2c2a;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      display: none; /* começa invisível */
+      z-index: 1000;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    #voltar-topo:hover {
+      background-color: #6b423e;
+      transform: scale(1.2);
+    }
+    a{
+      color: black;
+    }
+
+    .sumario2{
+        color: #703c24;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+@media print {
+
+  /* Remove cores fortes e fundos */
+  body, header, section, .poema-section, .poema-box, .interpretacao, .sumario, .introducao {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Remove elementos desnecessários na impressão */
+  #voltar-topo,
+  .imagem-container img {
+    display: none !important;
+  }
+
+  /* Links aparecem como texto normal */
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
+  /* Ajusta margens para impressão */
+  body {
+    margin: 1.5cm;
+  }
+
+  header h1 {
+    font-size: 24pt !important;
+  }
+
+  header p {
+    font-size: 12pt !important;
+  }
+
+  /* Garante que o conteúdo não fique cortado */
+  .poema-section, .poema-box, .interpretacao, .introducao, .sumario {
+    page-break-inside: avoid;
+  }
+
+  /* Colunas do poema viram 1 coluna para facilitar leitura impressa */
+  .poema {
+    column-count: 1 !important;
+  }
+
+  /* Mantém tudo alinhado para impressão */
+  main {
+    padding: 0;
+  }
+  /* Remove espaço entre o título do poema e os versos */
+  .poema-section h2,
+  .poema-section h3 {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .poema-section .poema,
+  .poema-section p:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>INFÂNCIA PERDIDA</h1>
+    <p>Uma coletânea de poemas sobre lembranças, inocência e o tempo que passa.</p>
+    <p><i>Coletânea feita por: Bernardo, Gustavo Addati, Luigi, Natan e Thomas.</i></p>
+  </header>
+
+  <!-- 🟢 INTRODUÇÃO -->
+  <section class="introducao">
+    <h2>Introdução ao Tema</h2>
+    <p>Imagine voltar ao começo — às mãos pequenas, aos sonhos grandes, ao um mundo ainda sem feridas.
+    Mas, ao abrir os olhos, perceber que o início ficou longe demais.</p>
+    <p>Esta coletânea, intitulada <strong>“Infância Perdida”</strong>, reúne poemas que exploram esse delicado fio entre o passado e o presente, entre a inocência e a consciência. Cada texto é um mergulho nas lembranças, nas feridas e nas ternuras que moldam quem nos tornamos.</p>
+    <p>O objetivo é provocar reflexão e emoção — tanto nas crianças, que começam a descobrir o mundo, quanto nos adultos e idosos, que reconhecem o peso e a beleza do que ficou para trás.</p>
+  </section>
+
+  <div class="sumario">
+    <h2 class="sumario2" id="supmario">SUMÁRIO</h2>
+    <div class="poema">
+      <a href="#INFÂNCIA">INFÂNCIA</a><br>
+      <a href="#MEUS_OITO_ANOS">MEUS OITO ANOS</a><br>
+      <a href="#TRADUÇÃO">TRADUÇÃO</a><br>
+      <a href="#INFÂNCIA_PERDIDA">INFÂNCIA PERDIDA</a><br>
+      <a href="#CONSOLO_NA_PRAIA">CONSOLO NA PRAIA</a><br>
+      <a href="#INFÂNCIA_ROUBADA">INFÂNCIA ROUBADA</a><br>
+      <a href="#O_DIREITO_DAS_CRIANÇAS">O DIREITO DAS CRIANÇAS</a><br>
+      <a href="#CONCLUSAO">CONCLUSÃO</a>
+      <br>
+    </div>
+  </div>
+
+  <!-- 🔶 POEMAS -->
+  <main>
+
+    <section class="poema-section">
+      <div class="poema-box">
+        <h2 id="INFÂNCIA">INFÂNCIA  -  Rosana Santos</h2>
+        <div class="poema">O doce sabor das lembranças
+Estão vivas em meu pensamento
+Fecho os olhos para ver na memória
+A felicidade guardada no tempo.
+Sorrisos e muita alegria
+Brincadeiras e grande folia
+Bola, peteca, amarelinha
+Gira o mundo na ponta do peão.
+O mundo cabe na palma da mão
+Sou a bailarina que dança no salão
+Sou o pirata em uma nau na guerra
+Sou astronauta em volta da terra.
+No balanço eu voo bem alto
+Toco um pedaço do céu
+Toco as nuvens de algodão
+Tão doces feito o mel.
+Vou girando na ciranda
+Na ciranda cirandinha
+Saudades de ser criança
+Vem minha lembrança
+Tão minha.
+        </div>
+      </div>
+
+      <div class="interpretacao">
+        <h3>POEMA: "INFÂNCIA"</h3>
+        O poema é um retrato da infância, esse tempo mágico em que a imaginação transforma qualquer coisa em aventura. As lembranças surgem vivas, cheias de movimento e cor — as brincadeiras, os sorrisos, o encanto das pequenas descobertas. O poema revisita esse passado com carinho, como quem fecha os olhos para reviver momentos antigos.<br><br>
+
+Por trás da calma dos versos, sente-se o peso da distância do passado. A criança que “voava no balanço” e “girava na ciranda” ficou guardada apenas na lembrança, como um pedaço precioso de si mesma. O poema fala dessa saudade de um tempo simples, quando o mundo parecia caber na palma da mão. É um lamento doce, quase um sussurro, que revela o desejo de voltar, nem que seja só por um instante, à pureza e à alegria de ser criança.
+      </div>
+
+      <div class="imagem-container">
+        <img src="https://lunetas.com.br/wp-content/uploads/2015/07/desafios-da-infancia-e-da-adolescencia.jpg" alt="Crianças brincando ao ar livre">
+      </div>
+    </section>
+
+    <section class="poema-section">
+      <div class="poema-box">
+        <h2 id="MEUS_OITO_ANOS">MEUS OITO ANOS  -  Casimiro de Abreu</h2>
+        <div class="poema">Oh! Que saudades que tenho
+Da aurora da minha vida,
+Da minha infância querida
+Que os anos não trazem mais!
+Que amor, que sonhos, que flores,
+Naquelas tardes fagueiras
+À sombra das bananeiras,
+Debaixo dos laranjais!
+
+Como são belos os dias
+Do despontar da existência!
+- Respira a alma inocência
+Como perfumes a flor;
+O mar é - lago sereno,
+O céu - um manto azulado,
+O mundo - um sonho dourado,
+A vida - um hino d'amor!
+
+Que auroras, que sol, que vida,
+Que noites de melodia
+Naquela doce alegria,
+Naquele ingênuo folgar!
+O céu bordado d’estrelas,
+A terra de aromas cheia,
+As ondas beijando a areia
+E a lua beijando o mar!
+
+Oh! dias da minha infância!
+Oh! meu céu de primavera!
+Que doce a vida não era
+Nessa risonha manhã.
+Em vez das mágoas de agora,
+Eu tinha nessas delícias
+De minha mãe as carícias
+E beijos de minha irmã!
+
+Livre filho das montanhas,
+Eu ia bem satisfeito,
+De camisa aberto ao peito,
+- Pés descalços, braços nus -
+Correndo pelas campinas
+À roda das cachoeiras,
+Atrás das asas ligeiras
+Das borboletas azuis!
+
+Naqueles tempos ditosos
+Ia colher as pitangas,
+Trepava a tirar as mangas,
+Brincava à beira do mar;
+Rezava às Ave-Marias,
+Achava o céu sempre lindo,
+Adormecia sorrindo
+E despertava a cantar!
+
+Oh! Que saudades que tenho
+Da aurora da minha vida,
+Da minha infância querida
+Que os anos não trazem mais!
+Que amor, que sonhos, que flores,
+Naquelas tardes fagueiras
+À sombra das bananeiras,
+Debaixo dos laranjais!
+        </div>
+      </div>
+
+      <div class="interpretacao">
+        <h3>POEMA: "MEUS OITO ANOS"</h3>
+        O poema é uma lembrança viva e cheia de emoção da infância, tratada como um tempo de pureza e encantamento. O eu lírico conta o passado com ternura, recordando as brincadeiras, o contato com a natureza e o afeto familiar que marcavam aqueles dias simples e felizes. Cada verso "o mar calmo", "o céu azul", "as tardes sob as bananeiras", reforça a ideia de uma vida inocente e livre, em contraste com as dores e preocupações da vida adulta.<br><br>
+
+Por trás das lembranças, há um sentimento profundo de saudade e perda. O poeta reconhece que o tempo levou embora não apenas os dias da infância, mas também a inocência e a serenidade que vinham com eles. O contraste entre o “então” e o “agora” mostra a inevitável passagem do tempo e o peso das mágoas que a maturidade traz.
+      </div>
+
+      <div class="imagem-container">
+        <img src="https://convivaeducacao.org.br/uploads/broadcast/image/3944/phpDiDt1c_6385252fa9caa.jpg" alt="Brincadeiras na natureza">
+      </div>
+    </section>
+
+    <section class="poema-section">
+      <div class="poema-box">
+        <h2 id="TRADUÇÃO">TRADUÇÃO  -  Ana Martins</h2>
+        <div class="poema">Este poema
+em outra língua
+seria outro poema
+
+um relógio atrasado
+que marca a hora certa
+de algum outro lugar
+uma criança que inventa
+uma língua só para falar
+com outra criança
+
+uma casa de montanha
+reconstruída sobre a praia
+corroída pouco a pouco pela presença do mar
+
+o importante é que
+num determinado ponto
+os poemas fiquem emparelhados
+
+como em certos problemas de física
+de velhos livros escolares.
+        </div>
+      </div>
+
+      <div class="interpretacao">
+        <h3>POEMA: "TRADUÇÃO"</h3>
+O poema parece fala a ideia de tradução e diferença, mas, alé disso, fala também sobre o tempo e a distância — coisas que afastam o presente daquilo que já foi vivido. A parte "criança que inventa uma língua só para falar com outra criança" traz de volta o universo da infância, um tempo em que a comunicação era inventada. Essa linguagem secreta simboliza um vínculo perdido, algo que o adulto já não consegue mais reproduzir, como se a infância fosse uma língua que desaprendemos com o passar dos anos.<br><br>
+
+Em outra parte "a casa corroída pelo mar" há uma sensação de perda e transformação. O mar vai apagando a casa, assim como a infância vai se desfazendo dentro de um adulto.
+      </div>
+
+      <div class="imagem-container">
+        <img src="https://img.freepik.com/fotos-premium/close-up-crianca-mao-jogando-brinquedo-na-praia-de-areia_31963-193.jpg" alt="Brinquedos antigos na areia">
+      </div>
+    </section>
+
+    <section class="poema-section">
+      <div class="poema-box">
+        <h2 id="INFÂNCIA_PERDIDA">INFÂNCIA PERDIDA  -  José Bezerra</h2>
+        <div class="poema">Se tive infância não sei
+Dela estou esquecido
+Se passou como o vento
+Pra mim foi tempo perdido
+Infância e juventude
+Pra mim não teve sentido
+
+A infância se passou
+Como uma forte alvorada
+Um menino sem brinquedo
+Sorriso sem gargalhada
+Uma manhã sem brisa
+Foi tarde ensolarada
+
+Foi assim a minha infância
+Sem beijos e sem carícias
+Infância sobressaltada
+Dela não sei a delícia
+Foi só trabalho pesado
+Uma infância sem malícia
+
+Eu não brinquei nas calçadas
+Nem também de esconder
+Brincadeira de anel
+De esconder e correr
+Só sei citar os nomes
+Mas nenhuma sei fazer
+
+As brincadeiras de roda
+Dizer adivinhações
+Não joguei bola de gude
+Nem o jogo de botões
+Eu só fazia mandados
+Eu só tomei beliscões
+
+Minha infância foi assim
+Infância de dissabores
+De tristeza e agonia
+Uma infância de dores
+Foi uma infância perdida
+Uma infância sem flores
+
+Eu nunca pude dizer
+Ó minha infância querida
+Que os anos já levaram
+Nela não tive guarida
+Se eu já tive infância
+Foi uma infância sem vida
+
+Adeus, infância perdida,
+Que de mim se afastou
+E não voltará jamais
+O que era doce acabou
+Partiu sem dar despedida
+Só a saudade ficou
+
+Ela se foi muito cedo
+Eu ainda estava dormindo
+Partiu e se foi embora
+Ainda vi ela saindo
+Por isso até hoje
+Saudade fico sentindo
+
+Ó minha infância querida
+Por ti eu vivo chorando
+Te procurei e não achei
+Teu nome vivo chamando
+Sei que não a encontrarei
+E velho já estou ficando
+
+Continuarei esta busca
+Embora seja sentida
+Era tão meiga e bela
+Por isso ficou ferida
+Senhores, a minha infância
+Foi uma infância perdida.
+        </div>
+      </div>
+
+      <div class="interpretacao">
+        <h3>POEMA: "INFÂNCIA PERDIDA"</h3>
+        O poema retrata uma infância marcada pela ausência de afeto, brincadeiras e proteção, revelando a dor de alguém que não teve a oportunidade de viver essa fase com leveza e alegria. A repetição da ideia de “infância perdida” reforça o sentimento de que algo essencial foi negado, deixando uma lacuna profunda na vida.<br><BR>
+        Ao longo dos versos, percebe-se uma saudade não daquilo que foi vivido, mas do que poderia ter sido. O poeta lamenta não ter participado das brincadeiras comuns da infância, como roda, bola de gude ou esconde-esconde, e expressa uma tristeza por não ter conhecido a inocência e a doçura que essa fase costuma trazer. A infância, que deveria ser um tempo de descobertas e afeto, foi para ele uma etapa dura e sem sentido.<br><BR>
+        Esse poema nos faz refletir sobre a importância de cuidar da infância, garantindo que todas as crianças tenham acesso ao amor, à brincadeira e à proteção.
+      </div>
+
+      <div class="imagem-container">
+        <img src="https://observatorio3setor.org.br/wp-content/uploads/2020/03/1-siria.jpg" alt="Criança segurando brinquedo antigo">
+      </div>
+    </section>
+
+    <section class="poema-section">
+      <div class="poema-box">
+        <h2 id="CONSOLO_NA_PRAIA">CONSOLO NA PRAIA  -  Carlos Drummond de Andrade</h2>
+        <div class="poema">Vamos, não chores.
+A infância está perdida.
+A mocidade está perdida.
+Mas a vida não se perdeu.
+
+O primeiro amor passou.
+O segundo amor passou.
+O terceiro amor passou.
+Mas o coração continua.
+
+Perdeste o melhor amigo.
+Não tentaste qualquer viagem.
+Não possuis carro, navio, terra.
+Mas tens um cão.
+
+Algumas palavras duras,
+em voz mansa, te golpearam.
+Nunca, nunca cicatrizam.
+Mas, e o humour?
+
+A injustiça não se resolve.
+À sombra do mundo errado
+murmuraste um protesto tímido.
+Mas virão outros.
+
+Tudo somado, devias
+precipitar-te, de vez, nas águas.
+Estás nu na areia, no vento…
+Dorme, meu filho.
+        </div>
+      </div>
+
+      <div class="interpretacao">
+        <h3>POEMA: "CONSOLO NA PRAIA"</h3>
+        <p>O poema, como o nome já diz, é um consolo. 
+Nele, o narrador fala sobre várias coisas que estão perdidas, que já acabaram, incluindo a infância. Por exemplo na segunda estrofe, quando ele fala que seus amores já passaram.<BR><BR>
+Mas, no final de cada estrofe, o interlocutor diz uma frase de resiliência, tentando dizer que ainda há a possibilidade de ter uma vida feliz, para acreditar num futuro melhor. Por exemplo na segunda estrofe, quando ele diz que o coração ainda está aberto para amar.</p>
+      </div>
+
+      <div class="imagem-container">
+        <img src="https://blog-leiturinha-novo.s3.us-east-1.amazonaws.com/production/uploads/2018/09/little-kid-playing-at-the-beach-picture-id964755374.jpg" alt="Criança na praia">
+      </div>
+    </section>
+
+    <section class="poema-section">
+      <div class="poema-box">
+        <h2 id="INFÂNCIA_ROUBADA">INFÂNCIA ROUBADA  -  Salustiano Luiz de Souza</h2>
+        <div class="poema">O troar de luzes o faz estremecer,
+Olhos de menino na janela de assombro,
+A rua destroçada, cenário a se perder,
+Na mente a lembrança, à vista, só escombro.
+
+Mãe ausente, eco vazio na memória,
+O pai, num canto, alma acabrunhada,
+Irmãzinha chora, lamuria pequena história,
+Lágrimas que se esvaem, uma vida roubada.
+
+Lá fora correm turbantes enfurecidos,
+Homens barbudos, fuzis em riste,
+A paz, um sonho há muito esquecido,
+Num mundo onde a infância não existe.
+
+Seu quintal, agora uma cratera,
+Onde rosas antes ousavam florir,
+Um triste vazio que a alma dilacera,
+Na eterna saudade de um tempo a se ir.
+
+O menino, com seu olhar triste, perdido,
+Busca alento no céu, quiçá resquício de cor,
+Em meio ao caos, dilacera um desejo contido,
+De brincar no quintal, sorrir, esquecer a dor.
+
+As paredes sussurram segredos do passado,
+Histórias de risadas, danças, dias de sol,
+Agora, apenas ecos de um tempo guardado,
+Na esperança de melhor futuro, luz de farol.
+
+Mas a guerra, estúpida, impiedosa e fria,
+Rouba-lhe a infância, o direito de sonhar,
+E, mesmo latejando dores em agonia,
+Tudo o que evoca em sonho é poder brincar.
+
+Oh, menino, que o amanhã te traga paz,
+Que a vida floresça incólume em teu quintal,
+E que o amor, presente que nunca se desfaz,
+Te devolva a alegria, o riso pueril e original.
+        </div>
+      </div>
+
+      <div class="interpretacao">
+        <h3>POEMA: "INFÂNCIA ROUBADA"</h3>
+         O poema retrata a dura realidade de uma criança em meio à guerra, onde o som das explosões substitui o riso, e o cenário de destruição apaga qualquer traço de inocência. O eu lírico descreve um menino que observa, com olhos de assombro, a ruína de sua rua e de sua família, marcada pela ausência da mãe, o sofrimento do pai e o choro da irmã. A infância, que deveria ser tempo de alegria, é roubada pela violência e pelo medo.<br><br>
+A imagem do quintal transformado em cratera simboliza a perda de um espaço seguro e feliz, onde antes floresciam rosas e brincadeiras. O menino, mesmo cercado pelo caos, ainda guarda o desejo de brincar, de sorrir, de reencontrar a cor em meio à escuridão. As lembranças de tempos melhores ecoam nas paredes, como sussurros de um passado que insiste em sobreviver na memória.<br><br>
+No final, o poema clama por esperança: que o menino reencontre a paz, que o amor floresça novamente em seu quintal, e que o riso infantil — símbolo da vida e da liberdade — possa renascer. É uma denúncia poética contra os horrores da guerra e um apelo profundo pela preservação da infância.
+      </div>
+
+      <div class="imagem-container">
+        <img src="https://imagens.ebc.com.br/b9RGnC0kdw4JsoSCvM6xSdKhgbg=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/2023-10-31t205038z_1_lynxmpej9u0sv_rtroptp_4_israel-palestinians.jpg?itok=5v0CiFGY" alt="Brinquedo abandonado em cenário melancólico">
+      </div>
+    </section>
+
+    <section class="poema-section">
+      <div class="poema-box">
+        <h2 id="O_DIREITO_DAS_CRIANÇAS">O DIREITO DAS CRIANÇAS  -  Ruth Rocha</h2>
+        <div class="poema">Toda criança no mundo
+Deve ser bem protegida
+Contra os rigores do tempo
+Contra os rigores da vida.
+
+Criança tem que ter nome
+Criança tem que ter lar
+Ter saúde e não ter fome
+Ter segurança e estudar.
+
+Não é questão de querer
+Nem questão de concordar
+Os diretos das crianças
+Todos tem de respeitar.
+
+Tem direito à atenção
+Direito de não ter medos
+Direito a livros e a pão
+Direito de ter brinquedos.
+
+Mas criança também tem
+O direito de sorrir.
+Correr na beira do mar,
+Ter lápis de colorir...
+
+Ver uma estrela cadente,
+Filme que tenha robô,
+Ganhar um lindo presente,
+Ouvir histórias do avô.
+
+Descer do escorregador,
+Fazer bolha de sabão,
+Sorvete, se faz calor,
+Brincar de adivinhação.
+
+Morango com chantilly,
+Ver mágico de cartola,
+O canto do bem-te-vi,
+Bola, bola, bola, bola!
+
+Lamber fundo da panela
+Ser tratada com afeição
+Ser alegre e tagarela
+Poder também dizer não!
+
+Carrinho, jogos, bonecas,
+Montar um jogo de armar,
+Amarelinha, petecas,
+E uma corda de pular.
+
+Um passeio de canoa,
+Pão lambuzado de mel,
+Ficar um pouquinho à toa...
+Contar estrelas no céu...
+
+Ficar lendo revistinha,
+Um amigo inteligente,
+Pipa na ponta da linha,
+Um bom dum cachorro quente.
+
+Festejar o aniversário,
+Com bala, bolo e balão!
+Brincar com muitos amigos,
+Dar pulos no colchão.
+
+Livros com muita figura,
+Fazer viagem de trem,
+Um pouquinho de aventura...
+Alguém para querer bem...
+
+Festinha de São João,
+Com fogueira e com bombinha,
+Pé-de-moleque e rojão,
+Com quadrilha e bandeirinha.
+
+Andar debaixo da chuva,
+Ouvir música e dançar.
+Ver carreira de saúva,
+Sentir o cheiro do mar.
+
+Pisar descalça no barro,
+Comer frutas no pomar,
+Ver casa de joão-de-barro,
+Noite de muito luar.
+
+Ter tempo pra fazer nada,
+Ter quem penteie os cabelos,
+Ficar um tempo calada...
+Falar pelos cotovelos.
+
+E quando a noite chegar,
+Um bom banho, bem quentinha,
+Sensação de bem-estar...
+De preferência um celinho.
+
+Uma caminha macia,
+Uma canção de ninar,
+Uma história bem bonita,
+Então, dormir e sonhar...
+
+Embora eu não seja rei,
+Decreto, neste país,
+Que toda, toda criança
+Tem direito a ser feliz!!!
+        </div>
+      </div>
+
+      <div class="interpretacao">
+        <h3>POEMA: "O DIREITO DAS CRIANÇAS"</h3>
+        O poema é uma celebração da infância e de tudo o que ela representa: alegria, brincadeiras, afeto e proteção. Em versos simples e cheios de ternura, o autor descreve os direitos das crianças — o direito de ter um lar, saúde, educação, mas também o de brincar, sonhar e ser amada. Cada estrofe mostra a beleza das pequenas coisas da vida, como ouvir histórias, brincar na chuva ou comer frutas no pomar, lembrando que a felicidade infantil está nas experiências mais puras e simples.<br><br>
+        Apesar do tom leve, o poema traz uma preocupação: muitas crianças não vivem tudo o que ele descreve. Quando o autor "decreta" o direito de ser feliz, parece mais um pedido de justiça — como se quisesse lembrar que toda criança merece ter uma infância de verdade.
+      </div>
+
+    </section>
+
+        <section class="poema-section">
+      <div class="poema-box">
+        <h2 id="CONCLUSAO">CONCLUSÃO</h2>
+        <div class="poema">
+        </div>
+      </div>
+
+      <div class="interpretacao">
+<p>A infância é um período único e precioso, marcado por descobertas, brincadeiras e aprendizados que ajudam a formar quem somos. É uma fase que deveria ser vivida com leveza, proteção e afeto, permitindo que cada criança explore o mundo com segurança e imaginação. No entanto, essa não é a realidade de muitas crianças brasileiras.</p>
+
+<p>Hoje, aproximadamente 1,65 milhão de crianças e adolescentes entre 5 e 17 anos estão em situação de trabalho infantil, o que representa cerca de 4,3% dessa faixa etária. Além disso, cerca de 32 milhões de crianças e adolescentes vivem em situação de pobreza, enfrentando falta de acesso a educação de qualidade, moradia adequada e condições básicas para um desenvolvimento saudável. Muitas acabam deixando de estudar, de brincar e de viver plenamente sua infância porque precisam assumir responsabilidades que não deveriam existir nessa fase da vida.</p>
+
+<p>Diante desses desafios, é essencial que a sociedade e o poder público atuem juntos. Fortalecer programas sociais, ampliar o acesso à educação infantil, combater o trabalho infantil, apoiar famílias vulneráveis e incentivar projetos comunitários são passos fundamentais para mudar essa realidade. Além disso, qualquer pessoa pode ajudar: apoiando iniciativas sociais, denunciando situações de risco, oferecendo espaços seguros de convivência ou simplesmente valorizando o ato de brincar e aprender.</p>
+
+<p>Concluir sobre a infância no Brasil é reconhecer tanto sua beleza quanto a urgência de protegê-la. Garantir que todas as crianças vivam essa etapa com dignidade não é apenas um gesto de cuidado — é um compromisso com o futuro. Quando uma criança tem a chance de viver plenamente sua infância, toda a sociedade ganha: torna-se mais justa, mais humana e mais esperançosa. A infância deve ser um direito, nunca um privilégio, e cabe a todos nós trabalhar para que isso seja realidade.</p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <a href="#supmario" id="voltar-topo">Sumário</a>
+
+  <script>
+    const botaoTopo = document.getElementById("voltar-topo");
+
+    // Mostra o botão quando rolar para baixo
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        botaoTopo.style.display = "block";
+      } else {
+        botaoTopo.style.display = "none";
+      }
+    });
+
+    // Voltar ao topo suavemente
+    function voltarAoTopo() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Centraliza o conteúdo clicado (âncora) no meio da tela
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const alvo = document.querySelector(link.getAttribute("href"));
+        if (alvo) {
+          const topo = alvo.getBoundingClientRect().top + window.scrollY;
+          const meioTela = window.innerHeight / 2 - alvo.offsetHeight / 2;
+          window.scrollTo({
+            top: topo - meioTela,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
